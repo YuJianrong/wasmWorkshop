@@ -42,7 +42,7 @@ docker run --rm -v $(pwd):/src -t -u $(id -u):$(id -g) emscripten/emsdk emcc \
   ./quickjs/quickjs.c ./quickjs/cutils.c ./quickjs/libregexp.c ./quickjs/libbf.c ./quickjs/libunicode.c \
   -DCONFIG_VERSION="\"1.0.0\"" \
   -DEMSCRIPTEN \
-  \-lm \
+  -lm \
   -Oz \
   -s EXPORTED_FUNCTIONS='["_safeEval"]' \
   -s EXPORT_NAME="SafeEvalModule" \
