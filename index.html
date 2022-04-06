@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./eval.js"></script>
+  </head>
+<body>
+  <div>Result: <span id="result"></span></div>
+
+  <script>
+
+    async function main() {
+      const safeEvalModule = await SafeEvalModule();
+      const safeEval = safeEvalModule.cwrap('safeEval', 'string', ['string']);
+
+      const script = `
+        function hello(){
+            const foo = 'Hello';
+            const bar = 'World';
+            return foo + ' ' +bar;
+        }
+        hello();
+      `;
+      const result = safeEval(script);
+
+      document.getElementById('result').textContent = result;
+    }
+
+    main();
+
+  </script>
+</body>
+</html>
