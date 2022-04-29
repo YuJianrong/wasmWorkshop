@@ -1,5 +1,12 @@
 ## WASM Workshop
 
+### Prerequisites
+
+* Docker
+* Node
+
+### Steps
+
 1. Create folder `wasmWorkshop`
 2. Clone quickJs ( <https://github.com/bellard/quickjs> ) in this folder
 3. Create file `safeEval.c` with the following content:
